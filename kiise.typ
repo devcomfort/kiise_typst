@@ -56,29 +56,38 @@
   ]
 }
 
-// 섹션 제목 스타일
-#let section-style = (
-  level: 1,
-  numbering: "1.",
-  title-size: 12pt,
-  title-weight: "bold",
-)
-
-#show heading.where(level: 1): it => {
-  v(0.5em)
-  text(size: 12pt, weight: "bold")[#it.body]
-  v(0.3em)
-}
-
-#show heading.where(level: 2): it => {
-  v(0.3em)
-  text(size: 11pt, weight: "bold")[#it.body]
-  v(0.2em)
-}
-
 // 참고문헌 스타일
 #let bibliography-section = {
   [
     #text(size: 11pt, weight: "bold")[참고문헌]
   ]
+}
+
+// ============================================================================
+// Heading 설정
+// ============================================================================
+
+// Heading 번호 매김 설정
+#set heading(numbering: "1.")
+
+// 1단계 제목 (= 제목) 스타일
+#show heading.where(level: 1): it => {
+  block(
+    spacing: 0.5em,
+    text(size: 12pt, weight: "bold", numbering: "1.")[
+      #it.body
+    ]
+  )
+  v(0.3em)
+}
+
+// 2단계 제목 (== 제목) 스타일
+#show heading.where(level: 2): it => {
+  block(
+    spacing: 0.3em,
+    text(size: 11pt, weight: "bold")[
+      #it.body
+    ]
+  )
+  v(0.2em)
 }

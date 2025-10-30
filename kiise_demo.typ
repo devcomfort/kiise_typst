@@ -35,8 +35,6 @@
 
 #pagebreak()
 
-#set heading(numbering: "1.")
-
 = 용어
 
 / LLM: Large Language Model
