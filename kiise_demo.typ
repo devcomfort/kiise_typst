@@ -1,4 +1,7 @@
-#import "kiise.typ": abstract-section, author-info, bibliography-section, paper-title, terminology, figure-caption, table-caption, equation, appendix-section
+#import "kiise.typ": (
+  abstract-section, appendix-section, author-info, bibliography-section, equation, figure-caption, paper-title,
+  table-caption, terminology,
+)
 
 #let model_key_list = ("gemma3:1b", "qwen3:0.6b", "qwen3:1.7b")
 #let model_list = ("Gemma", "Qwen")
