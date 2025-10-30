@@ -3,9 +3,6 @@
   author: "Authors",
 )
 
-// 한글과 영문 폰트 설정
-#set text(font: ("New Computer Modern", "Noto Sans CJK KR"), lang: "ko")
-
 // 페이지 설정
 #set page(
   paper: "a4",
