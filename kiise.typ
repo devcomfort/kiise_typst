@@ -64,30 +64,33 @@
 }
 
 // ============================================================================
-// Heading 설정
+// Heading 설정 (LaTeX \section, \subsection 대응)
 // ============================================================================
 
 // Heading 번호 매김 설정
 #set heading(numbering: "1.")
 
-// 1단계 제목 (= 제목) 스타일
+// Heading-1: 섹션 제목 (= 제목) [LaTeX \section 대응]
+// 예: \section{서론} → = 서론
 #show heading.where(level: 1): it => {
-  block(
-    spacing: 0.5em,
-    text(size: 12pt, weight: "bold", numbering: "1.")[
-      #it.body
-    ]
-  )
+  v(0.5em)
+  text(size: 12pt, weight: "bold")[#it.body]
   v(0.3em)
 }
 
-// 2단계 제목 (== 제목) 스타일
+// Heading-2: 서브섹션 제목 (== 제목) [LaTeX \subsection 대응]
+// 예: 섹션 내 소제목
 #show heading.where(level: 2): it => {
-  block(
-    spacing: 0.3em,
-    text(size: 11pt, weight: "bold")[
-      #it.body
-    ]
-  )
+  v(0.3em)
+  text(size: 11pt, weight: "bold")[#it.body]
   v(0.2em)
 }
+
+// Heading-3: 소제목 (=== 제목) [LaTeX \subsubsection 대응]
+// 예: 세부 항목
+#show heading.where(level: 3): it => {
+  v(0.2em)
+  text(size: 10pt, weight: "bold")[#it.body]
+  v(0.1em)
+}
+
